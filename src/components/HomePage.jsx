@@ -7,7 +7,7 @@ export default function HomePage(props) {
         <div>
             <div className='spotify-auth'>
                 <SpotifyAuth
-                    redirectUri='http://localhost:3000/'
+                    redirectUri='http://localhost:3000/create-room'
                     clientID='038949ed814c4c37b430b704b6562da5'
                     scopes={['user-read-private', 'user-read-email']} // either style will work
                     onAccessToken={(token) => props.setToken(token)}

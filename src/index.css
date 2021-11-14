@@ -34,6 +34,27 @@ body {
 .clickable-playlist{
   cursor: pointer;
   margin: 30px;
+  transition : 0.8s;
+}
+
+.clickable-playlist:hover{
+  transform: scale(1.04);
+  transition: 0.8s
+}
+
+.create-room-button-container {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.create-room-button {
+  background-color: #6F2232!important;
+  color: #fff!important;
+  border: none!important;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .playlist-card {
@@ -42,11 +63,14 @@ body {
   background-color: #101010!important;
   color: #fff!important;
   max-width: 300px;
+  border-radius: 0px!important;
+  transition: 0.5s;
 }
 
 .playlist-card:hover {
   border-width: 1px;
   border-color: #fff;
+  transition: 0.5s;
 }
 
 .playlist-card-header {

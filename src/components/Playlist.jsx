@@ -14,12 +14,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '18px',
         fontFamily : "arvo"
     },
-    root: {
-        
-    },
-    media: {
-        
-    },
 
     expand: {
         color: '#fff',
@@ -44,8 +38,18 @@ export default function Playlist(props) {
         setExpanded(!expanded);
     };
 
+    const handlePlaylistSelect = () => {
+        setClicked(!clicked);
+        // console.log('woooo')
+        if (!clicked) {
+            props.setSelectedPlaylists([...props.selectedPlaylists, props.playlist]);
+        } else {
+            props.setSelectedPlaylists(props.selectedPlaylists.filter(playlist => playlist.id !== props.playlist.id));
+        }
+    }
+
     return (
-        <div className="clickable-playlist" onClick={() => setClicked(!clicked)}>
+        <div className="clickable-playlist" onClick={handlePlaylistSelect}>
             <Card style={clicked ? {"borderWidth" : "3px", "borderColor" : "#fff"} : {}} className={classes.root, "playlist-card"} variant="outlined">
                 <CardHeader classes={{title: classes.title}} className="playlist-card-header" title={props.playlist.name}/>
                 <CardMedia className={classes.media} component="img" image={props.playlist.images[0].url} />
