@@ -48,6 +48,31 @@ body {
   text-align: center;
 }
 
+.song-list-entry:hover {
+  background-color: #290b11!important;
+  color: #fff;
+}
+
+.MuiListItemText-secondary {
+  color: #555!important;
+}
+
+.Mui-selected {
+  background-color: #290b11!important;
+  color: #fff;
+}
+
+.MuiDivider-root {
+  background-color: #777!important;
+}
+
+.song-list {
+  border-color: #fff!important;
+  border-style: solid!important;
+  border-width: 2px!important;
+  border-radius: 10px!important;
+}
+
 .create-room-button {
   background-color: #6F2232!important;
   color: #fff!important;

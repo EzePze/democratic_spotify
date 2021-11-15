@@ -52,7 +52,7 @@ export default function Playlist(props) {
         <div className="clickable-playlist" onClick={handlePlaylistSelect}>
             <Card style={clicked ? {"borderWidth" : "3px", "borderColor" : "#fff"} : {}} className={classes.root, "playlist-card"} variant="outlined">
                 <CardHeader classes={{title: classes.title}} className="playlist-card-header" title={props.playlist.name}/>
-                <CardMedia className={classes.media} component="img" image={props.playlist.images[0].url} />
+                <CardMedia className={classes.media} component="img" image={props.playlist.images[0] ? props.playlist.images[0].url : "../images/no_playlist_image.jpg"} />
                 <CardContent>
                     <Typography style={{wordWrap: "break-word"}}>
                         {props.playlist.description.replaceAll('&quot;', "\"") || "No description"}
