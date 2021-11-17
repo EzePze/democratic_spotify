@@ -37,14 +37,14 @@ function App(props) {
 
   return (
     <div>
+      <Router>
       {console.log(roomsList)}
-      <Navbar />
+      <Navbar token={token} setToken={setToken}/>
       <Background />
       {/* <QRCode value={uuid} />
       <p>{uuid}</p> */}
       {token ? (
       <div className='music_data'>
-      <Router>
         <SpotifyApiContext.Provider value={token}>
           <Routes>
             <Route path='/create-room' element={<RoomCreatePage token={token}/>} />
@@ -54,11 +54,11 @@ function App(props) {
             <Route path='/room/test-room' element={<Room />} />
           </Routes>
         </SpotifyApiContext.Provider>
-      </Router>
       </div>) : (
         <HomePage setToken={setToken}/>
       )
     }
+    </Router>
     </div>
   );
 }
